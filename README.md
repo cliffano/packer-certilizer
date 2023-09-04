@@ -31,8 +31,8 @@ An image with `cliffano/certilizer` repository and `latest` tag should show up:
     haku> docker images
 
     REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-    cliffano/certilizer                                0.11.0-pre.0                            cfabed5d3162   2 minutes ago   593MB
-    cliffano/certilizer                                latest                                  cfabed5d3162   2 minutes ago   593MB
+    cliffano/certilizer                         0.9.0-pre.0                            2147033a2dae   9 hours ago     1.15GB
+    cliffano/certilizer                         latest                                 2147033a2dae   9 hours ago     1.15GB
 
 Usage
 -----
