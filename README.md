@@ -11,6 +11,7 @@ Packer Certilizer is a Packer builder of machine image for running [Certilizer](
 
 | Packer Certilizer Version | Certilizer Version | Python Version | Alpine Version |
 |---------------------------|--------------------|----------------|----------------|
+| 0.11.0                    | 0.11.0             | 3.11.5         | 3.18           |
 | 0.10.0                    | 0.10.3             | 3.11.5         | 3.18           |
 
 Installation
