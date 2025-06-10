@@ -1,8 +1,9 @@
 <img align="right" src="https://raw.github.com/cliffano/packer-certilizer/master/avatar.jpg" alt="Avatar"/>
 
 [![Build Status](https://github.com/cliffano/packer-certilizer/workflows/CI/badge.svg)](https://github.com/cliffano/packer-certilizer/actions?query=workflow%3ACI)
-[![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/certilizer.svg)](https://hub.docker.com/r/cliffano/certilizer/)
 [![Security Status](https://snyk.io/test/github/cliffano/packer-certilizer/badge.svg)](https://snyk.io/test/github/cliffano/packer-certilizer)
+[![Published Version](https://img.shields.io/docker/v/cliffano/certilizer.svg)](https://hub.docker.com/r/cliffano/certilizer/)
+[![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/certilizer.svg)](https://hub.docker.com/r/cliffano/certilizer/)
 
 Packer Certilizer
 --------------
