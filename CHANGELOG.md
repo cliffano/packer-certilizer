@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add deps-upgrade target
+- Add Packer plugins for Docker and Ansible
+
+### Changed
+- Change dependencies to be managed by pip-tools
+
 ## 0.12.0 - 2023-09-08
 ### Changed
 - Upgrade Certilizer to 0.12.0

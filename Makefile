@@ -2,21 +2,33 @@ version ?= 0.12.1-pre.0
 
 ci: clean deps lint build-docker test-docker
 
+define python_venv
+	. .venv/bin/activate && $(1)
+endef
+
 clean:
-	rm -rf logs
+	rm -rf logs/
 
 stage:
-	mkdir -p logs
+	mkdir -p logs/
 
 deps:
-	pip3 install -r requirements.txt
+	python3 -m venv .venv
+	$(call python_venv,python3 -m pip install -r requirements.txt)
+	packer plugins install github.com/hashicorp/docker 1.1.1
+	packer plugins install github.com/hashicorp/ansible 1.1.3
+
+deps-upgrade:
+	python3 -m venv .venv
+	$(call python_venv,python3 -m pip install -r requirements-dev.txt)
+	$(call python_venv,pip-compile --upgrade)
 
 lint:
 	packer validate -syntax-only $(VAR_PARAMS) templates/packer/docker.json
 	# ansible-lint provisioners/ansible/playbook/*.yaml
 	shellcheck provisioners/*.sh
-	yamllint conf/ansible/inventory/group_vars/*.yaml provisioners/ansible/playbook/*.yaml
-	jsonlint conf/packer/vars/*.json templates/packer/*.json
+	$(call python_venv,yamllint conf/ansible/inventory/group_vars/*.yaml provisioners/ansible/playbook/*.yaml)
+	$(call python_venv,jsonlint conf/packer/vars/*.json templates/packer/*.json)
 
 build-docker: stage
 	PACKER_LOG_PATH=logs/packer-$@.log \
@@ -29,19 +41,19 @@ build-docker: stage
 		templates/packer/docker.json
 
 test-docker:
-	py.test -v test/testinfra/docker.py
+	$(call python_venv,py.test -v test/testinfra/docker.py)
 
 publish-docker:
 	docker image push cliffano/certilizer:latest
 	docker image push cliffano/certilizer:$(version)
 
 release-major:
-	certilizer release --release-increment-type major
+	rtk release --release-increment-type major
 
 release-minor:
-	certilizer release --release-increment-type minor
+	rtk release --release-increment-type minor
 
 release-patch:
-	certilizer release --release-increment-type patch
+	rtk release --release-increment-type patch
 
 .PHONY: ci clean stage deps lint build-docker test-docker publish-docker release-major release-minor release-patch
