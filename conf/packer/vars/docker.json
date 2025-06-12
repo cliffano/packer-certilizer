@@ -1,4 +1,4 @@
 {
-  "docker_source": "python:3.11.5-alpine3.18",
+  "docker_source": "python:3.12-alpine3.22",
   "version": "0.12.1-pre.0"
 }
