@@ -13,17 +13,17 @@
     },
     {
       "type": "shell",
-      "script": "provisioners/init.sh"
+      "script": "provisioners/shell/init.sh"
     },
     {
       "type": "ansible-local",
-      "playbook_file": "provisioners/ansible/playbook/certilizer.yaml",
+      "playbook_file": "provisioners/ansible/certilizer.yaml",
       "group_vars": "conf/ansible/inventory/group_vars/",
       "inventory_groups": "defaults"
     },
     {
       "type": "shell",
-      "script": "provisioners/info.sh"
+      "script": "provisioners/shell/info.sh"
     }
   ],
   "builders": [
