@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade to Python 3.12 with Alpine 3.22
 - Upgrade Certilizer to 1.0.0
 
+### Removed
+- Remove unused deps Cython, py3-setuptools, and scipy libs
+
 ## 0.12.0 - 2023-09-08
 ### Changed
 - Upgrade Certilizer to 0.12.0
