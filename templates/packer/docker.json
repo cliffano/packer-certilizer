@@ -18,7 +18,7 @@
     {
       "type": "ansible-local",
       "playbook_file": "provisioners/ansible/certilizer.yaml",
-      "group_vars": "conf/ansible/inventory/group_vars/",
+      "group_vars": "conf/ansible/",
       "inventory_groups": "defaults"
     },
     {

@@ -25,10 +25,10 @@ deps-upgrade:
 
 lint:
 	packer validate -syntax-only $(VAR_PARAMS) templates/packer/docker.json
-	# ansible-lint provisioners/ansible/playbook/*.yaml
-	shellcheck provisioners/*.sh
-	$(call python_venv,yamllint conf/ansible/inventory/group_vars/*.yaml provisioners/ansible/playbook/*.yaml)
-	$(call python_venv,jsonlint conf/packer/vars/*.json templates/packer/*.json)
+	ansible-lint provisioners/ansible/*.yaml
+	# shellcheck provisioners/shell/*.sh
+	$(call python_venv,yamllint conf/ansible/*.yaml provisioners/ansible/*.yaml)
+	$(call python_venv,jsonlint conf/packer/*.json templates/packer/*.json)
 
 build-docker: stage
 	PACKER_LOG_PATH=logs/packer-$@.log \
@@ -36,7 +36,7 @@ build-docker: stage
 		PACKER_TMP_DIR=/tmp \
 		packer build \
 		$(VAR_PARAMS) \
-		-var-file=conf/packer/vars/docker.json \
+		-var-file=conf/packer/docker.json \
 		-var 'version=$(version)' \
 		templates/packer/docker.json
 
