@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Change dependencies to be managed by pip-tools
 - Upgrade to Python 3.12 with Alpine 3.22
+- Upgrade Certilizer to 1.0.0
 
 ## 0.12.0 - 2023-09-08
 ### Changed
