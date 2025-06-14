@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update Packer template to use HCL
 
 ### Removed
-- Remove unused deps Cython, py3-setuptools, and scipy libs
+- Remove unused deps Cython, demjson3, py3-setuptools, and scipy libs
 
 ## 0.12.0 - 2023-09-08
 ### Changed

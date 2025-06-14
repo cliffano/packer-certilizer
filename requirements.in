@@ -1,5 +1,4 @@
 ansible
 ansible-lint
-demjson3
 pytest-testinfra
 yamllint

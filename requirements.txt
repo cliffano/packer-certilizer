@@ -29,8 +29,6 @@ click==8.2.1
     # via black
 cryptography==45.0.4
     # via ansible-core
-demjson3==3.0.6
-    # via -r requirements.in
 filelock==3.18.0
     # via ansible-lint
 importlib-metadata==8.7.0
