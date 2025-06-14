@@ -6,7 +6,7 @@
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/certilizer.svg)](https://hub.docker.com/r/cliffano/certilizer/)
 
 Packer Certilizer
---------------
+-----------------
 
 Packer Certilizer is a Packer builder of machine image for running [Certilizer](https://github.com/cliffano/certilizer) SSL/TLS certificates reporting tool.
 
@@ -49,3 +49,10 @@ Simply run a container using cliffano/certilizer image:
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v $(pwd):/opt/workspace \
       -i -t cliffano/certilizer
+
+Colophon
+--------
+
+Related projects:
+
+* [Certilizer](https://github.com/cliffano/certilizer)
