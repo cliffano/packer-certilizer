@@ -12,6 +12,7 @@ Packer Certilizer is a Packer builder of machine image for running [Certilizer](
 
 | Packer Certilizer Version | Certilizer Version | Python Version | Alpine Version |
 |---------------------------|--------------------|----------------|----------------|
+| 1.0.0                     | 1.0.0              | 3.12           | 3.22           |
 | 0.12.0                    | 0.12.0             | 3.11.5         | 3.18           |
 | 0.11.0                    | 0.11.0             | 3.11.5         | 3.18           |
 | 0.10.0                    | 0.10.3             | 3.11.5         | 3.18           |
@@ -33,9 +34,9 @@ An image with `cliffano/certilizer` repository and `latest` tag should show up:
 
     haku> docker images
 
-    REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-    cliffano/certilizer                         0.9.0-pre.0                            2147033a2dae   9 hours ago     1.15GB
-    cliffano/certilizer                         latest                                 2147033a2dae   9 hours ago     1.15GB
+    REPOSITORY                           TAG                 IMAGE ID       CREATED          SIZE
+    cliffano/certilizer                  0.12.1-pre.0        50f465597fd9   23 minutes ago   695MB
+    cliffano/certilizer                  latest              50f465597fd9   23 minutes ago   695MB
 
 Usage
 -----
