@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change dependencies to be managed by pip-tools
 - Upgrade to Python 3.12 with Alpine 3.22
 - Upgrade Certilizer to 1.0.0
+- Update Packer template to use HCL
 
 ### Removed
 - Remove unused deps Cython, py3-setuptools, and scipy libs

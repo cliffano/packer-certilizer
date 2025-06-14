@@ -24,21 +24,20 @@ deps-upgrade:
 	$(call python_venv,pip-compile --upgrade)
 
 lint:
-	packer validate -syntax-only $(VAR_PARAMS) templates/packer/docker.json
+	packer validate -syntax-only templates/packer/docker.pkr.hcl
 	ansible-lint provisioners/ansible/*.yaml
 	# shellcheck provisioners/shell/*.sh
 	$(call python_venv,yamllint conf/ansible/*.yaml provisioners/ansible/*.yaml)
-	$(call python_venv,jsonlint conf/packer/*.json templates/packer/*.json)
+	$(call python_venv,jsonlint conf/packer/*.json)
 
 build-docker: stage
 	PACKER_LOG_PATH=logs/packer-$@.log \
 		PACKER_LOG=1 \
 		PACKER_TMP_DIR=/tmp \
 		packer build \
-		$(VAR_PARAMS) \
 		-var-file=conf/packer/docker.json \
 		-var 'version=$(version)' \
-		templates/packer/docker.json
+		templates/packer/docker.pkr.hcl
 
 test-docker:
 	$(call python_venv,py.test -v test/testinfra/docker.py)
