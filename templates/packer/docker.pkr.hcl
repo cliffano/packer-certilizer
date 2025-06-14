@@ -67,7 +67,7 @@ build {
   provisioner "ansible-local" {
     playbook_file = "provisioners/ansible/certilizer.yaml"
     group_vars = "conf/ansible/"
-    inventory_groups = "defaults"
+    inventory_groups = ["defaults"]
   }
 
   provisioner "shell" {
