@@ -30,7 +30,6 @@ lint:
 	find conf/ -type f -name "*.json" | while IFS= read -r file; do echo "> $$file"; python3 -m json.tool "$$file"; done
 	# shellcheck provisioners/shell/*.sh
 
-
 build-docker: stage
 	PACKER_LOG_PATH=logs/packer-$@.log \
 		PACKER_LOG=1 \
