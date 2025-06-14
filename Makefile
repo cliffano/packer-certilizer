@@ -25,7 +25,7 @@ deps-upgrade:
 
 lint:
 	packer validate -syntax-only templates/packer/docker.pkr.hcl
-	ansible-lint provisioners/ansible/*.yaml
+	$(call python_venv,ansible-lint provisioners/ansible/*.yaml)
 	# shellcheck provisioners/shell/*.sh
 	$(call python_venv,yamllint conf/ansible/*.yaml provisioners/ansible/*.yaml)
 	$(call python_venv,jsonlint conf/packer/*.json)
