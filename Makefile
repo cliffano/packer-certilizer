@@ -26,9 +26,10 @@ deps-upgrade:
 lint:
 	packer validate -syntax-only templates/packer/docker.pkr.hcl
 	$(call python_venv,ansible-lint provisioners/ansible/*.yaml)
-	# shellcheck provisioners/shell/*.sh
 	$(call python_venv,yamllint conf/ansible/*.yaml provisioners/ansible/*.yaml)
-	$(call python_venv,jsonlint conf/packer/*.json)
+	find conf/ -type f -name "*.json" | while IFS= read -r file; do echo "> $$file"; python3 -m json.tool "$$file"; done
+	# shellcheck provisioners/shell/*.sh
+
 
 build-docker: stage
 	PACKER_LOG_PATH=logs/packer-$@.log \
