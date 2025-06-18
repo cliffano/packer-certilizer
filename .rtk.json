@@ -19,6 +19,13 @@
       "type": "keep-a-changelog"
     },
     {
+      "path": "backpacker.yml",
+      "type": "yaml",
+      "params": {
+        "property": "image.version"
+      }
+    },
+    {
       "path": ".github/workflows/publish-docker-workflow.yaml",
       "type": "yaml",
       "params": {
