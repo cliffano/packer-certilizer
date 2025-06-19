@@ -4,7 +4,7 @@
 ################################################################
 
 # Backpacker's version number
-BACKPACKER_VERSION = 0.10.1-pre.0
+BACKPACKER_VERSION = 1.0.0
 
 ################################################################
 # User configuration variables
@@ -16,6 +16,8 @@ BACKPACKER_VERSION = 0.10.1-pre.0
 #   name: someimage
 #   version: 1.2.3
 # author: Some Author
+# dockerhub:
+#   username: someuser
 
 # IMAGE_NAME is the name of the machine image
 IMAGE_NAME=$(shell yq .image.name backpacker.yml)
@@ -25,6 +27,9 @@ IMAGE_VERSION=$(shell yq .image.version backpacker.yml)
 
 # AUTHOR is the author of the Python package
 AUTHOR ?= $(shell yq .author backpacker.yml)
+
+# DOCKERHUB_USERNAME is the username of Docker Hub account to publish the Docker machine image to
+DOCKERHUB_USERNAME ?= $(shell yq .dockerhub.username backpacker.yml)
 
 $(info ################################################################)
 $(info Building Python package using backpacker with user configurations:)
@@ -121,8 +126,8 @@ build-docker: stage
 		templates/packer/docker.pkr.hcl
 
 publish-docker:
-	docker image push cliffano/$(IMAGE_NAME):latest
-	docker image push cliffano/$(IMAGE_NAME):$(IMAGE_VERSION)
+	docker image push $(DOCKERHUB_USERNAME)/$(IMAGE_NAME):latest
+	docker image push $(DOCKERHUB_USERNAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
 
 ################################################################
 
