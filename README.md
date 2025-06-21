@@ -56,4 +56,4 @@ Colophon
 
 Related projects:
 
-* [Certilizer](https://github.com/cliffano/certilizer)
+* [Certilizer](https://github.com/cliffano/certilizer) - Python CLI for generating report of SSL/TLS certificates from multiple endpoints specified in a YAML configuration
