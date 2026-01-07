@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade to Python 3.14 with Alpine 3.23
+- Upgrade Certilizer to 2.0.0
+
 ## 1.2.0 - 2025-09-16
 ### Added
 - Add CodeQL workflow and badge

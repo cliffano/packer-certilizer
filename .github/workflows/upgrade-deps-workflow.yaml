@@ -11,7 +11,7 @@ jobs:
           set-safe-directory: ${{ github.workspace }}
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.14'
       - run: git config --global user.email 'pakkunbot'
       - run: git config --global user.name 'blah+pakkun@cliffano.com'
       - run: sudo make deps-extra-apt
